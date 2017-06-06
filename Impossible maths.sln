@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{250C4731-72A5-4273-7101-8C52F77E3B68}") = "Impossible maths", "Assembly-CSharp.csproj", "{A014907A-7FBE-09CD-CFBF-3BF01123DBD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A014907A-7FBE-09CD-CFBF-3BF01123DBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A014907A-7FBE-09CD-CFBF-3BF01123DBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A014907A-7FBE-09CD-CFBF-3BF01123DBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A014907A-7FBE-09CD-CFBF-3BF01123DBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
