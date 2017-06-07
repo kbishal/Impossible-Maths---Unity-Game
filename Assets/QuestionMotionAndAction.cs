@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class QuestionMotionAndAction : MonoBehaviour {
 
+	public Text textScore;
 	public Text question;
-
 	public Text option1;
 	public Text option2;
 	public Text option3;
@@ -29,11 +29,24 @@ public class QuestionMotionAndAction : MonoBehaviour {
 	}
 
 	void Start () {
+		GameObject.FindGameObjectWithTag("restart").SetActive(false);
+		textScore.text = "";
+		CollisionScript.instance.rotateLeft.gameObject.SetActive (false);
+		CollisionScript.instance.rotateRight.gameObject.SetActive (false);
+
+	}
+
+	public void EnterTheGame(){
+		textScore.text = "Score";
+		CollisionScript.instance.SetScore (0);
+		GameObject.FindGameObjectWithTag ("startButton").SetActive (false);
 		rb2d = question.GetComponent<Rigidbody2D> ();
-	
+
 		FrameQuestion ();
 		MoveQuestion (-moveSpeed);
-	
+		CollisionScript.instance.rotateLeft.gameObject.SetActive (true);
+		CollisionScript.instance.rotateRight.gameObject.SetActive (true);
+
 	}
 
     public void FrameQuestion(){
@@ -72,7 +85,7 @@ public class QuestionMotionAndAction : MonoBehaviour {
 
 
 
-		int num = Random.Range (0, 4);
+		int num = Random.Range (1, 4);
 		if (num == 0) {
 			option1.text = "" + Answer;
 			option2.text = "" + (Answer+1);
@@ -105,6 +118,14 @@ public class QuestionMotionAndAction : MonoBehaviour {
 		rb2d.velocity = vel;
 	}
 
+	public void Restart(){
+		CollisionScript.instance.Score.text = "" + 0;
+		CollisionScript.instance.SetScore (0);
+		ResetQuestion ();
+		CollisionScript.instance.rotateLeft.gameObject.SetActive (true);
+		CollisionScript.instance.rotateRight.gameObject.SetActive (true);
+
+	}
 	/*void OnTriggerEnter2D (Collider2D hitInfo) {
 		if (hitInfo.name == "square")
 		{
@@ -149,7 +170,10 @@ public class QuestionMotionAndAction : MonoBehaviour {
 		pos.anchoredPosition = new Vector2 (0, 325);
 		FrameQuestion ();
 		MoveQuestion (-moveSpeed);
+		GameObject.FindGameObjectWithTag("restart").SetActive(false);
 	}
+
+
 
 	public string GetOption1(){
 		return option1.text;

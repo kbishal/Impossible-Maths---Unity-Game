@@ -3,9 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/QuestionMotionAndAction.cs">
     <Files>
       <File FileName="Assets/Scripts/changeColour.cs" Line="19" Column="45" />
-      <File FileName="Assets/QuestionMotionAndAction.cs" Line="23" Column="2" />
-      <File FileName="Assets/HUD.cs" Line="7" Column="2" />
-      <File FileName="Assets/CollisionScript.cs" Line="11" Column="6" />
+      <File FileName="Assets/QuestionMotionAndAction.cs" Line="157" Column="64" />
+      <File FileName="Assets/CollisionScript.cs" Line="72" Column="18" />
+      <File FileName="Assets/moveLabel.cs" Line="22" Column="66" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

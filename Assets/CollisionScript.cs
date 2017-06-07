@@ -5,9 +5,14 @@ using UnityEngine.UI;
 
 public class CollisionScript : MonoBehaviour 
 {
+	public Button restart;
+	public Image rotateLeft;
+	public Image rotateRight;
+	
 	private static int score = 0 ;
 	public Text Score;
 	private int count = 0;
+
 
 	public static CollisionScript instance;
 
@@ -46,9 +51,11 @@ public class CollisionScript : MonoBehaviour
 
 		} else {
 			Debug.Log ("Else block");
-			score--;
 			Score.text = "" + score;
-			QuestionMotionAndAction.instance.ResetQuestion ();
+			QuestionMotionAndAction.instance.MoveQuestion (0);
+			restart.gameObject.SetActive (true);
+			rotateLeft.gameObject.SetActive (false);
+			rotateRight.gameObject.SetActive (false);
 
 		}
 	}
@@ -57,13 +64,18 @@ public class CollisionScript : MonoBehaviour
 		return score;
 	}
 
+	public void SetScore(int _score){
+		score = _score;
+		Score.text = "" + score;
+	}
+
 	void Start(){
 		//Debug.Log (QuestionMotionAndAction.instance.option1.text + " ," + QuestionMotionAndAction.instance.option2.text);
-		Score.text = "" + score;
+		Score.text = "";
 	}
 
 	void Update(){
 
 	}
-
+		
 }

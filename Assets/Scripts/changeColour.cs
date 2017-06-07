@@ -12,11 +12,25 @@ public class changeColour : MonoBehaviour {
 
 	void awake(){
 	}
-
-	public void RotateImage(){
+	public void RotateImage()
+	{
+		StartCoroutine (RotateImageCoroutine ());
+	}
+	public IEnumerator RotateImageCoroutine(){
 		
 		Square = GameObject.FindGameObjectWithTag ("HUD");
-		transform.Rotate (Vector3.forward * -90);	
-	
+		for (int i = 1; i <= 9; i++) {
+			yield return new WaitForSeconds (.0001f);
+			transform.Rotate (Vector3.forward * -10);
+		}
+			
+//		yield return new WaitForSeconds(5);
+	}
+
+	IEnumerator Example()
+	{
+//		print(Time.time);
+		yield return new WaitForSeconds(.1f);
+//		print(Time.time);
 	}
 }

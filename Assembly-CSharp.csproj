@@ -49,6 +49,7 @@
      <Compile Include="Assets\CollisionScript.cs" />
      <Compile Include="Assets\HUD.cs" />
      <Compile Include="Assets\QuestionMotionAndAction.cs" />
+     <Compile Include="Assets\RotateAction.cs" />
      <Compile Include="Assets\Scripts\changeColour.cs" />
      <Compile Include="Assets\moveLabel.cs" />
  <Reference Include="UnityEngine.Analytics">
