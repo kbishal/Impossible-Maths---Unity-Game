@@ -24,12 +24,7 @@ public class RotateAction : MonoBehaviour {
 		//		yield return new WaitForSeconds(5);
 	}
 
-	IEnumerator Example()
-	{
-		//		print(Time.time);
-		yield return new WaitForSeconds(.1f);
-		//		print(Time.time);
-	}
+
 
 	public void RotateImageLeft()
 	{

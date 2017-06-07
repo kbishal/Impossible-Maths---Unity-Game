@@ -11,6 +11,9 @@ public class QuestionMotionAndAction : MonoBehaviour {
 	public Text option2;
 	public Text option3;
 	public Text option4;
+	public Button restart;
+	public Button startButton;
+	public Button FullScreenButton;
 
 	private Rigidbody2D rb2d;
 	private Vector2 vel;
@@ -18,8 +21,7 @@ public class QuestionMotionAndAction : MonoBehaviour {
 	private int operand2;
 	protected int Answer;
 	private RectTransform pos;
-
-	private static float moveSpeed = 80f;
+	public float moveSpeed = 160f;
 
 	public static QuestionMotionAndAction instance;
 
@@ -29,24 +31,25 @@ public class QuestionMotionAndAction : MonoBehaviour {
 	}
 
 	void Start () {
-		GameObject.FindGameObjectWithTag("restart").SetActive(false);
+		rb2d = question.GetComponent<Rigidbody2D> ();
+		//GameObject.FindGameObjectWithTag("restart").SetActive(false);
+		restart.gameObject.SetActive(false);
+		FullScreenButton.gameObject.SetActive (false);
 		textScore.text = "";
-		CollisionScript.instance.rotateLeft.gameObject.SetActive (false);
-		CollisionScript.instance.rotateRight.gameObject.SetActive (false);
-
+//		CollisionScript.instance.rotateLeft.gameObject.SetActive (false);
+//		CollisionScript.instance.rotateRight.gameObject.SetActive (false);
 	}
 
 	public void EnterTheGame(){
+//		CollisionScript.instance.rotateLeft.gameObject.SetActive (true);
+//		CollisionScript.instance.rotateRight.gameObject.SetActive (true);
+		FullScreenButton.gameObject.SetActive (true);
 		textScore.text = "Score";
 		CollisionScript.instance.SetScore (0);
-		GameObject.FindGameObjectWithTag ("startButton").SetActive (false);
-		rb2d = question.GetComponent<Rigidbody2D> ();
-
+		//GameObject.FindGameObjectWithTag ("startButton").SetActive (false);
+		startButton.gameObject.SetActive (false);
 		FrameQuestion ();
 		MoveQuestion (-moveSpeed);
-		CollisionScript.instance.rotateLeft.gameObject.SetActive (true);
-		CollisionScript.instance.rotateRight.gameObject.SetActive (true);
-
 	}
 
     public void FrameQuestion(){
@@ -56,26 +59,26 @@ public class QuestionMotionAndAction : MonoBehaviour {
 
 		if (Qselector == 0) {
 			
-			operand1 = Random.Range (0, 9);
-			operand2 = Random.Range (0, 9);
+			operand1 = Random.Range (1, 9);
+			operand2 = Random.Range (5, 10);
 
 			question.text = string.Format ("{0} + {1}", operand1, operand2);
 			Answer = operand1 + operand2;
 		} else if (Qselector == 1) {
-			operand1 = Random.Range (0, 9);
+			operand1 = Random.Range (1, 9);
 			operand2 = Random.Range (0, 9);
 
 			question.text = string.Format ("{0} - {1}", operand1, operand2);
 			Answer = operand1 - operand2;
 		} else if (Qselector == 2) {
-			operand1 = Random.Range (0, 9);
-			operand2 = Random.Range (0, 9);
+			operand1 = Random.Range (1, 9);
+			operand2 = Random.Range (2, 10);
 
 			question.text = string.Format ("{0} X {1}", operand1, operand2);
 			Answer = operand1 * operand2;
 		} else {
-			operand1 = Random.Range (1, 9);
-			operand2 = Random.Range (1, 9);
+			operand1 = Random.Range (2, 9);
+			operand2 = Random.Range (2, 9);
 			
 			int temp = operand1 * operand2;
 
@@ -85,7 +88,7 @@ public class QuestionMotionAndAction : MonoBehaviour {
 
 
 
-		int num = Random.Range (1, 4);
+		int num = Random.Range (0, 4);
 		if (num == 0) {
 			option1.text = "" + Answer;
 			option2.text = "" + (Answer+1);
@@ -122,9 +125,9 @@ public class QuestionMotionAndAction : MonoBehaviour {
 		CollisionScript.instance.Score.text = "" + 0;
 		CollisionScript.instance.SetScore (0);
 		ResetQuestion ();
-		CollisionScript.instance.rotateLeft.gameObject.SetActive (true);
-		CollisionScript.instance.rotateRight.gameObject.SetActive (true);
-
+//		CollisionScript.instance.rotateLeft.gameObject.SetActive (true);
+//		CollisionScript.instance.rotateRight.gameObject.SetActive (true);
+		FullScreenButton.gameObject.SetActive (true);
 	}
 	/*void OnTriggerEnter2D (Collider2D hitInfo) {
 		if (hitInfo.name == "square")
@@ -136,33 +139,9 @@ public class QuestionMotionAndAction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (CollisionScript.instance.GetScore () >= 3) {
-			moveSpeed = 100;
-		}
-		if (CollisionScript.instance.GetScore () >= 6) {
-			moveSpeed = 120;
-		}
-		if (CollisionScript.instance.GetScore () >= 9) {
-			moveSpeed = 140;
-		}
-		if (CollisionScript.instance.GetScore () >= 12) {
-			moveSpeed = 170;
-		}
-		if (CollisionScript.instance.GetScore () >= 15) {
-			moveSpeed = 200;
-		}
-		if (CollisionScript.instance.GetScore () >= 20) {
-			moveSpeed = 230;
-		}
-		if (CollisionScript.instance.GetScore () >= 25) {
-			moveSpeed = 260;
-		}
-		if (CollisionScript.instance.GetScore () >= 30) {
-			moveSpeed = 290;
-		}
-		if (CollisionScript.instance.GetScore () >= 40) {
-			moveSpeed = 350;
-		}
+
+
+
 	}
 
 	public void ResetQuestion(){
@@ -170,7 +149,8 @@ public class QuestionMotionAndAction : MonoBehaviour {
 		pos.anchoredPosition = new Vector2 (0, 325);
 		FrameQuestion ();
 		MoveQuestion (-moveSpeed);
-		GameObject.FindGameObjectWithTag("restart").SetActive(false);
+		//GameObject.FindGameObjectWithTag("restart").SetActive(false); instead use the statement below.
+		restart.gameObject.SetActive(false);
 	}
 
 

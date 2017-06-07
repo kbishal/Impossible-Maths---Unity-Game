@@ -1,0 +1,17 @@
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEditor.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/UnityEngine.VR.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Mono.Cecil.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Unity.DataContract.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/bishal/Documents/Impossible maths/Temp/bin/Debug/Mono.Cecil.Mdb.dll
